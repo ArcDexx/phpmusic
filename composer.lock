@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0954eb65da144940c2e438b8592878e0",
-    "content-hash": "8aa39f0c60a4bc136dbd39c12d164ebf",
+    "hash": "8c8eee0878b0852c6d5651b334b36d7f",
+    "content-hash": "601fb31c8d0d4504a213a0c837654da4",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -344,106 +344,6 @@
             "time": "2016-04-28 03:01:34"
         },
         {
-            "name": "composer/installers",
-            "version": "v1.0.25",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
-            },
-            "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Composer\\Installers\\Plugin",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Installers\\": "src/Composer/Installers"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
-                }
-            ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "https://composer.github.io/installers/",
-            "keywords": [
-                "Craft",
-                "Dolibarr",
-                "Hurad",
-                "ImageCMS",
-                "MODX Evo",
-                "Mautic",
-                "OXID",
-                "SMF",
-                "Thelia",
-                "WolfCMS",
-                "agl",
-                "aimeos",
-                "annotatecms",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "codeigniter",
-                "concrete5",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "elgg",
-                "fuelphp",
-                "grav",
-                "installer",
-                "joomla",
-                "kohana",
-                "laravel",
-                "lithium",
-                "magento",
-                "mako",
-                "mediawiki",
-                "modulework",
-                "moodle",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "puppet",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "symfony",
-                "typo3",
-                "wordpress",
-                "zend",
-                "zikula"
-            ],
-            "time": "2016-04-13 19:46:30"
-        },
-        {
             "name": "mobiledetect/mobiledetectlib",
             "version": "2.8.22",
             "source": {
@@ -595,47 +495,6 @@
                 "phinx"
             ],
             "time": "2016-03-07 14:09:22"
-        },
-        {
-            "name": "slywalker/boost_cake",
-            "version": "1.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/slywalker/cakephp-plugin-boost_cake.git",
-                "reference": "bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/slywalker/cakephp-plugin-boost_cake/zipball/bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e",
-                "reference": "bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "*",
-                "php": ">=5.3.0"
-            },
-            "suggest": {
-                "twbs/bootstrap": "Bootstrap framework"
-            },
-            "type": "cakephp-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yasuo Harada",
-                    "email": "slywalker.net@gmail.com"
-                }
-            ],
-            "description": "BoostCake is a plugin for CakePHP using Bootstrap",
-            "homepage": "http://slywalker.github.io/cakephp-plugin-boost_cake/",
-            "keywords": [
-                "bootstrap",
-                "cakephp",
-                "twitter"
-            ],
-            "time": "2014-11-07 10:36:43"
         },
         {
             "name": "symfony/config",
