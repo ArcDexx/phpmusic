@@ -18,7 +18,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>facile</td>
+        <td>facilesss</td>
         <td>150</td>
         <td>3/10</td>
       </tr>
@@ -55,7 +55,6 @@
         <td>2</td>
         <td>alex</td>
       </tr>
-    
     </tbody>
      </table>
     </div>
