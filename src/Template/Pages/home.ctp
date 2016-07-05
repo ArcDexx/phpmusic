@@ -5,7 +5,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -17,7 +16,6 @@
     </ul>
   </div>
 </nav>
-
 <div class="container" align="center">
   <?php
   if (isset($unmatchingPasswords))
@@ -59,9 +57,7 @@
         </form>
     </div>
   </div>
-
   <br/><hr>
-
   <div class="row" >
     <div class="col-md-offset-3 col-md-6">
       <h2>Inscription</h2>
@@ -74,6 +70,5 @@
     </div>
   </div>
 </div>
-
 </body>
 </html>

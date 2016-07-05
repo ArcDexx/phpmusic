@@ -8,7 +8,7 @@
       </h2>
 
       </div>
-  </div>
+</div>
   <div class="row">
     <div class="col-md-4 col-md-offset-4 conteneur-corp">
       <p>Bienvenue sur Quizzr connectez vous pour entrer dans la compétition !</p>
