@@ -29,6 +29,28 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js')?>
     <?= $this->Html->script('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')?>
 
+    <?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js') ?>
+
+    <?= $this->Html->script('/js/app/quizzr.js') ?>
+    <?= $this->Html->script('/js/app/quizzr.routes.js') ?>
+    <?= $this->Html->script('/js/app/quizzr.config.js') ?>
+
+    <?= $this->Html->script('/js/app/game/game.module.js') ?>
+    <?= $this->Html->script('/js/app/game/services/game.service.js') ?>
+    <?= $this->Html->script('/js/app/game/directives/game.directive.js') ?>
+    <?= $this->Html->script('/js/app/game/controllers/game.controller.js') ?>
+
+    <?= $this->Html->script('/js/app/nav/nav.module.js') ?>
+    <?= $this->Html->script('/js/app/nav/services/nav.service.js') ?>
+    <?= $this->Html->script('/js/app/nav/directives/nav.directive.js') ?>
+    <?= $this->Html->script('/js/app/nav/controllers/nav.controller.js') ?>
+
+    <?= $this->Html->script('/js/app/login/login.module.js') ?>
+    <?= $this->Html->script('/js/app/login/services/login.service.js') ?>
+    <?= $this->Html->script('/js/app/login/directives/login.directive.js') ?>
+    <?= $this->Html->script('/js/app/login/controllers/login.controller.js') ?>
+
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -37,7 +59,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <meta charset="UTF-8">
 
 </head>
-<body>
+<body class="background">
       <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -47,7 +69,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Quizzr</a>
+          <a class="navbar-brand" href="/">Quizzr</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,13 +78,19 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Link</a></li>
           </ul>
+          <?php
+          
+          ?>
+          <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
+            <li><p class="navbar-btn">
+              <a href="/login" class="btn btn-primary">Se connecter</a></p>
+            </li>
+          </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
     <?=$this->fetch('content') ?>
 
-    <footer>
-    </footer>
 </body>
 </html>

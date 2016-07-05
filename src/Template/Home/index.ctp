@@ -1,33 +1,62 @@
-<html>
-<body class="background">
-
-  <div class="row">
-          <div class="col-md-4 col-md-offset-4 conteneur-tete" >
-            <h2 style="text-align: center">
-        Connexion
-      </h2>
-
-      </div>
-</div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4 conteneur-corp">
-      <p>Bienvenue sur Quizzr connectez vous pour entrer dans la compétition !</p>
-      <form role="form">
-      <br>
-        <div class="form-group">
-          <label for="pseudo">Pseudo</label>
-          <input type="text" class="form-control" id="pseudo">
-        </div>
-        <div class="form-group">
-          <label for="pwd">Mot de passe</label>
-          <input type="password" class="form-control" id="pwd">
-        </div>
-        <button class="btn btn-primary" type="submit" >Se connecter</button>
-      </form>
-      <a href="#">mot de passe oublié ?</a>
-      <hr>
-      <p style="text-align: right"><button class="btn btn-primary" href="#" >Pas encore inscrit ?</button></p>
+<div class="col-md-8 col-md-offset-2 ">
+    <div class="conteneur-tete">
+    <h2 style="text-align: center"> Bienvenue sur Quizzr</h2>
     </div>
-  </div>
-</body>
-</html>
+</div>
+
+<div class="col-md-6 col-md-offset-2">
+    <div class="conteneur-corp">
+    <h4 class="center"> Choisissez une partie à rejoindre</h4>
+    <hr>         
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Catégorie</th>
+        <th>Joueurs</th>
+        <th>Manche</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>facile</td>
+        <td>150</td>
+        <td>3/10</td>
+      </tr>
+      <tr>
+        <td>Rock</td>
+        <td>65</td>
+        <td>9/10</td>
+      </tr>
+    
+    </tbody>
+     
+  </table>
+   <button class="btn btn-primary pull-right">Rejoindre</button> 
+   <br>
+</div>
+</div>
+<div class="col-md-2 col-md-offset-0">
+    <div class="conteneur-droit">
+    <h4 class="center">Classement</h4>
+    <hr>
+     <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Rang</th>
+        <th>Pseudo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>thibaut</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>alex</td>
+      </tr>
+    
+    </tbody>
+     </table>
+    </div>
+</div>
