@@ -72,6 +72,9 @@ Router::scope('/', function (RouteBuilder $routes) {
      * routes you want in your application.
      */
     $routes->fallbacks('DashedRoute');
+    $routes->extensions(['json']);
+
+    $routes->resources('Users');
 });
 
 /**
