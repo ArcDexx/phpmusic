@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Entity\User;
 
 /**
  * Users Controller
@@ -48,20 +49,34 @@ class UsersController extends AppController
      */
     public function add()
     {
-        $user = $this->Users->newEntity();
-        if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->data);
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('The user could not be saved. Please, try again.'));
-            }
-        }
-        $this->set(compact('user'));
-        $this->set('_serialize', ['user']);
+        $data = new User($this->request->data);
+        $data->is_guest = false;
+
+        if ($this->Users->save($data))
+          $this->redirect(array('controller' => 'home', 'action' => 'index'));
+        else
+          $message = 'Error';
+
+        $this->set(compact('message'));
+        $this->set('_serialize', array('message'));
     }
 
+    public function login()
+    {
+      $user = new User($this->request->data);
+
+      $article = $this->Users
+                ->find()
+                ->where(['login' => $user->login, 'password' => $user->password])
+                ->first();
+
+      if (isset($article)){
+
+        $this->redirect(array('controller' => 'home', 'action' => 'index',));
+      }
+
+      $this->redirect(array('controller' => 'login', 'action' => 'index', 'fail' => '1'));
+    }
     /**
      * Edit method
      *
@@ -69,7 +84,7 @@ class UsersController extends AppController
      * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function edit($id)
     {
         $user = $this->Users->get($id, [
             'contain' => []

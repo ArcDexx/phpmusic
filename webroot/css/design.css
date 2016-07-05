@@ -1,26 +1,26 @@
 .background
 {
-background-image: url("../img/music_background3.jpg"); 
+background-image: url("../img/music_background3.jpg");
 background-size:cover;             
 background-repeat: no-repeat;
 background-position: center center;
 }
 .conteneur-corp
 {
-    border-radius:5px; 
-    background-color: white; 
-    padding: 20px; 
+    border-radius:5px;
+    background-color: white;
+    padding: 20px;
     border-style: solid;
-    border-width: 1px; 
+    border-width: 1px;
     border-color: lightgray;
     margin-top : 10px;
 }
 .conteneur-tete
 {
-    border-radius:5px; 
-    background-color: white; 
+    border-radius:5px;
+    background-color: white;
     border-style: solid;
-    border-width: 1px; 
+    border-width: 1px;
     border-color: lightgray;
     margin-top : 10px;
 }

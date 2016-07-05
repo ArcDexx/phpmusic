@@ -37,7 +37,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <meta charset="UTF-8">
 
 </head>
-<body>
+<body class="background">
       <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -47,7 +47,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Quizzr</a>
+          <a class="navbar-brand" href="/">Quizzr</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,13 +56,19 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Link</a></li>
           </ul>
+          <?php
+          
+          ?>
+          <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
+            <li><p class="navbar-btn">
+              <a href="/login" class="btn btn-primary">Se connecter</a></p>
+            </li>
+          </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
     <?=$this->fetch('content') ?>
 
-    <footer>
-    </footer>
 </body>
 </html>
