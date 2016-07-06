@@ -19,7 +19,6 @@ class GamesController extends AppController
     public function index()
     {
         $games = $this->paginate($this->Games);
-
         $this->set(compact('games'));
         $this->set('_serialize', ['games']);
     }
@@ -36,7 +35,6 @@ class GamesController extends AppController
         $game = $this->Games->get($id, [
             'contain' => ['Samples', 'Users']
         ]);
-
         $this->set('game', $game);
         $this->set('_serialize', ['game']);
     }

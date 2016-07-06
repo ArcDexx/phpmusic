@@ -17,21 +17,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>facilesss</td>
-        <td>150</td>
-        <td>3/10</td>
-      </tr>
-      <tr>
-        <td>Rock</td>
-        <td>65</td>
-        <td>9/10</td>
-      </tr>
+    <?php
+    foreach ($allgames as $game )
+    {
+        echo("<tr>");
+        echo ( '<td>'.$game->genre.'</td>');
+        echo ( '<td>'.$game->nb_players.'</td>');
+        echo ( '<td>'.$game->current_sample.'</td>');
+        echo("</tr>");
+    }
+
+    ?>
 
     </tbody>
 
   </table>
-   <button class="btn btn-primary pull-right">Rejoindre</button>
+  <a href="games"> <button class="btn btn-primary pull-right">Rejoindre</button></a>
    <br>
 </div>
 </div>
@@ -47,14 +48,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>thibaut</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>alex</td>
-      </tr>
+
+    <?php
+    foreach ($allusers as $user )
+    {
+      echo("<tr>");
+        echo ( '<td>'.$user->total_score.'</td>');
+        echo ( '<td>'.$user->login.'</td>');
+        echo("</tr>");
+    }
+
+    ?>
     </tbody>
      </table>
     </div>

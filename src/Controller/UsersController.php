@@ -17,6 +17,7 @@ class UsersController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
+    
     public function index()
     {
         $users = $this->paginate($this->Users);
