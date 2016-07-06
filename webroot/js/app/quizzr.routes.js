@@ -12,7 +12,8 @@
         $routeProvider.when('/login', {
             controller: 'LoginController',
             controllerAs: 'vm',
-            templateUrl: '/templates/login.html'
+            templateUrl: '/templates/login.' +
+            'html'
         }).when('/games', {
             controller: 'GamesController',
             controllerAs: 'vm',
