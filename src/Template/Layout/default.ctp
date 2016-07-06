@@ -75,17 +75,36 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
+            <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
           </ul>
           <?php
-          
+            if (!$this->request->session()->read("isLogged") == 'true')
+            {
           ?>
           <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
             <li><p class="navbar-btn">
               <a href="/login" class="btn btn-primary">Se connecter</a></p>
             </li>
           </ul>
+          <?php
+            }
+            else
+            {
+              ?>
+              <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
+                <li><p class="navbar-btn">
+                  <a href="/users/disconnect" class="btn btn-danger">Se déconnecter</a></p>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
+                <li><p class="navbar-btn">
+                  <a href="/account" class="btn btn-info">Mon compte</a></p>
+                </li>
+              </ul>
+              <p class="navbar-right navbar-text" style="margin-right : 10px">Connecté en tant que <?php echo $this->request->session()->read('login') ?></p>
+              <?php
+            }
+          ?>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>

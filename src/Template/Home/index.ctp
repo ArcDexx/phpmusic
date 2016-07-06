@@ -7,7 +7,7 @@
 <div class="col-md-6 col-md-offset-2">
     <div class="conteneur-corp">
     <h4 class="center"> Choisissez une partie à rejoindre</h4>
-    <hr>         
+    <hr>
     <table class="table">
     <thead>
       <tr>
@@ -27,11 +27,11 @@
         <td>65</td>
         <td>9/10</td>
       </tr>
-    
+
     </tbody>
-     
+
   </table>
-   <button class="btn btn-primary pull-right">Rejoindre</button> 
+   <button class="btn btn-primary pull-right">Rejoindre</button>
    <br>
 </div>
 </div>
