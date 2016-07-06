@@ -21,6 +21,12 @@
             controller: 'GamesController',
             controllerAs: 'vm',
             templateUrl: '/templates/game.html'
-        }).otherwise('/');
+        }).when('/',
+        {
+            controller: 'GamesController',
+            controllerAs: 'vm',
+            templateUrl: '/templates/games.html'
+        });
+
     }
 })();

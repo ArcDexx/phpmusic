@@ -3,13 +3,15 @@
 </div>
 <div class="col-md-4 col-md-offset-4 conteneur-corp">
     <h5>Bienvenue sur Quizzr, connectez-vous pour entrer dans la compétition !</h5>
-
+    <div class="form-group">
     <form role="form" ng-submit="vm.signin()">
-        Username : <input ng-model="vm.login" type="text" placeholder="Ex. : John" ng-required="true"/>
-        Password : <input ng-model="vm.password" type="password" placeholder="Password" ng-required="true"/>
+        Username : <input ng-model="vm.login" class="form-control" type="text" placeholder="Ex. : John" ng-required="true"/>
+        Password : <input ng-model="vm.password" class="form-control" type="password" placeholder="Password" ng-required="true"/>
     </br>
-    <p style="text-align: center"><a href="#">Mot de passe oublié ?</a></p>
+        <button type="submit" class="btn btn-primary pull-right">Se connecter</button>
+    <a href="#">Mot de passe oublié ?</a>
     <hr>
-    <button type="submit" class="btn btn-primary center-block">Pas encore inscrit ?</button>
     </form>
+    </div>
+    <button type="submit" class="btn btn-primary center-block">Pas encore inscrit ?</button>
 </div>
