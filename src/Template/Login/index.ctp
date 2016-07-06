@@ -14,7 +14,6 @@ if (isset($_GET['fail']))
 </div>
 <div class="col-md-4 col-md-offset-4 conteneur-corp">
     <h5>Bienvenue sur Quizzr, connectez-vous pour entrer dans la compétition !</h5>
-
     <?php
     echo $this->Form->create('User', array('url' => array('controller' => 'Users', 'action' => 'login')));
     echo $this->Form->input('login', array(
@@ -36,7 +35,10 @@ if (isset($_GET['fail']))
     ?>
 
   </br>
-    <p style="text-align: center"><a href="#">Mot de passe oublié ?</a></p>
+
+</br>
+    <p style="text-align: right"><a href="#">Mot de passe oublié ?</a></p>
     <hr>
     <a class="btn btn-primary center-block" href="/signup">Pas encore inscrit ?</a>
+
 </div>

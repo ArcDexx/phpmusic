@@ -61,18 +61,26 @@ class UsersController extends AppController
         $this->set('_serialize', array('message'));
     }
 
+    public function disconnect()
+    {
+      $this->request->session()->delete('isLogged');
+
+      $this->redirect(array('controller' => 'home', 'action' => 'index'));
+    }
+
     public function login()
     {
       $user = new User($this->request->data);
 
-      $article = $this->Users
+      $data = $this->Users
                 ->find()
                 ->where(['login' => $user->login, 'password' => $user->password])
                 ->first();
 
-      if (isset($article)){
-
-        $this->redirect(array('controller' => 'home', 'action' => 'index',));
+      if (isset($data)){
+        $this->request->session()->write('isLogged', 'true');
+        $this->request->session()->write('login', $user->login);
+        $this->redirect(array('controller' => 'home', 'action' => 'index'));
       }
 
       $this->redirect(array('controller' => 'login', 'action' => 'index', 'fail' => '1'));
