@@ -4,8 +4,7 @@
   angular
     .module('quizzr.login', [
       'quizzr.login.controllers',
-        'quizzr.login.services',
-		'quizzr.login.directives'
+        'quizzr.login.services'
     ]);
 
   angular
@@ -13,8 +12,4 @@
 
     angular
     .module('quizzr.login.services', ['ngCookies']);
-	
-	angular
-    .module('quizzr.login.directives', []);
-
 })();

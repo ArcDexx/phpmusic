@@ -16,7 +16,7 @@
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
-<html>
+<html ng-app="quizzr">
 <head>
     <?= $this->Html->charset() ?>
 
@@ -26,29 +26,28 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('cake.css') ?>
     <?= $this->Html->css('design.css')?>
     <?= $this->Html->css('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')?>
-    <?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js')?>
+    <?= $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js')?>
     <?= $this->Html->script('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')?>
 
-    <?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js') ?>
+    <?= $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js') ?>
+    <?= $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.min.js') ?>
+    <?= $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-cookies.min.js') ?>
 
     <?= $this->Html->script('/js/app/quizzr.js') ?>
     <?= $this->Html->script('/js/app/quizzr.routes.js') ?>
     <?= $this->Html->script('/js/app/quizzr.config.js') ?>
 
-    <?= $this->Html->script('/js/app/game/game.module.js') ?>
-    <?= $this->Html->script('/js/app/game/services/game.service.js') ?>
-    <?= $this->Html->script('/js/app/game/directives/game.directive.js') ?>
-    <?= $this->Html->script('/js/app/game/controllers/game.controller.js') ?>
-
-    <?= $this->Html->script('/js/app/nav/nav.module.js') ?>
-    <?= $this->Html->script('/js/app/nav/services/nav.service.js') ?>
-    <?= $this->Html->script('/js/app/nav/directives/nav.directive.js') ?>
-    <?= $this->Html->script('/js/app/nav/controllers/nav.controller.js') ?>
 
     <?= $this->Html->script('/js/app/login/login.module.js') ?>
     <?= $this->Html->script('/js/app/login/services/login.service.js') ?>
-    <?= $this->Html->script('/js/app/login/directives/login.directive.js') ?>
     <?= $this->Html->script('/js/app/login/controllers/login.controller.js') ?>
+
+    <?= $this->Html->script('/js/app/game/game.module.js') ?>
+    <?= $this->Html->script('/js/app/game/services/games.service.js') ?>
+    <?= $this->Html->script('/js/app/game/controllers/games.controller.js') ?>
+
+    <?= $this->Html->script('/js/app/nav/nav.module.js') ?>
+    <?= $this->Html->script('/js/app/nav/controllers/nav.controller.js') ?>
 
 
     <?= $this->fetch('meta') ?>
@@ -59,7 +58,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <meta charset="UTF-8">
 
 </head>
-<body class="background">
+<body class="background" ng-controller="NavigationController as vm">
       <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -83,7 +82,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           ?>
           <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
             <li><p class="navbar-btn">
-              <a href="/login" class="btn btn-primary">Se connecter</a></p>
+              <a href="#/login" class="btn btn-primary">Se connecter</a></p>
             </li>
           </ul>
           <?php
@@ -111,6 +110,5 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </nav>
 
     <?=$this->fetch('content') ?>
-
 </body>
 </html>

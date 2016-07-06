@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="cakemti">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/phpmusic" local="$PROJECT_DIR$" web="/webroot" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/app/vendor" />
+            <excludedPath path="/phpmusic/app/vendor" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

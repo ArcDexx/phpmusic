@@ -7,8 +7,7 @@
 
   config.$inject = ['$locationProvider'];
   
-  function config($locationProvider, $mdThemingProvider) {
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('!');
+  function config($locationProvider) {
+
   }
 })();

@@ -10,7 +10,7 @@
   function LoginController($location, $scope, Login) {
     var vm = this;
 
-    vm.login = login;
+    vm.signin = signin;
 
     activate();
     
@@ -20,8 +20,8 @@
       }
     }
     
-    function login() {
-      Login.login(vm.email, vm.password);
+    function signin() {
+      Login.login(vm.login, vm.password);
     }
   }
 })();

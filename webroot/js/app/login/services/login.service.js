@@ -20,9 +20,9 @@
 
     return Login;
 
-    function login(email, password) {
-      return $http.post('/api/v1/login', {
-        email: email, password: password
+    function login(login, password) {
+      return $http.post('/app/webroot/users/login', {
+        login: login, password: password
       }).then(loginSuccessFn, loginErrorFn);
 
       function loginSuccessFn(data, status, headers, config) {
@@ -45,9 +45,6 @@
     }
 
     function isAuthenticated() {
-      if (!authenticated) {
-         unauthenticate();
-      }
       return !!$cookies.get('account');
     }
 
@@ -59,15 +56,14 @@
       $cookies.remove('account');
     }
     
-    function register(email, password, username) {
-      return $http.post('/api/v1/accounts/', {
-        username: username,
-        password: password,
-        email: email
+    function register(email, password, login) {
+      return $http.post('/app/webroot/register', {
+        login: login,
+        password: password
       }).then(registerSuccessFn, registerErrorFn);
       
       function registerSuccessFn(data, status, headers, config) {
-        Login.login(email, password);
+        Login.login(login, password);
       }
       
       function registerErrorFn(data, status, headers, config) {
@@ -76,7 +72,7 @@
     }
 
     function logout() {
-      return $http.post('/api/v1/logout')
+      return $http.post('/app/webroot/logout')
           .then(logoutSuccessFn, logoutErrorFn);
       
       function logoutSuccessFn(data, status, headers, config) {

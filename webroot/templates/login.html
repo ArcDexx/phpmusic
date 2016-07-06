@@ -1,0 +1,15 @@
+<div class="col-md-4 col-md-offset-4 conteneur-tete">
+    <h2 style="text-align: center">Connexion</h2>
+</div>
+<div class="col-md-4 col-md-offset-4 conteneur-corp">
+    <h5>Bienvenue sur Quizzr, connectez-vous pour entrer dans la compétition !</h5>
+
+    <form role="form" ng-submit="vm.signin()">
+        Username : <input ng-model="vm.login" type="text" placeholder="Ex. : John" ng-required="true"/>
+        Password : <input ng-model="vm.password" type="password" placeholder="Password" ng-required="true"/>
+    </br>
+    <p style="text-align: center"><a href="#">Mot de passe oublié ?</a></p>
+    <hr>
+    <button type="submit" class="btn btn-primary center-block">Pas encore inscrit ?</button>
+    </form>
+</div>

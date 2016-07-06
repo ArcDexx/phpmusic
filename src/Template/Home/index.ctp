@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-offset-2 ">
+<!-- <div class="col-md-8 col-md-offset-2 ">
     <div class="conteneur-tete">
     <h2 style="text-align: center"> Bienvenue sur Quizzr</h2>
     </div>
@@ -62,4 +62,7 @@
     </tbody>
      </table>
     </div>
+</div> -->
+<div ng-view>
+    
 </div>

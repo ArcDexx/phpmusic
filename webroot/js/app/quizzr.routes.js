@@ -9,10 +9,10 @@
     // Route definitions
 
     function config($routeProvider) {
-        $routeProvider.when('/register', {
-            controller: 'RegisterController',
+        $routeProvider.when('/login', {
+            controller: 'LoginController',
             controllerAs: 'vm',
-            templateUrl: '/static/templates/login/register.html'
+            templateUrl: '/templates/login.html'
         }).otherwise('/');
     }
 })();

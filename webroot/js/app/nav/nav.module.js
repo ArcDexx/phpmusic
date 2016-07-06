@@ -3,18 +3,9 @@
 
   angular
     .module('quizzr.nav', [
-      'quizzr.nav.controllers',
-        'quizzr.nav.services',
-		'quizzr.nav.directives'
+      'quizzr.nav.controllers'
     ]);
 
   angular
     .module('quizzr.nav.controllers', []);
-
-    angular
-    .module('quizzr.nav.services', []);
-	
-	angular
-    .module('quizzr.nav.directives', []);
-
 })();

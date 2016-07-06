@@ -7,7 +7,7 @@
             'quizzr.routes',
             'quizzr.login',
             'quizzr.nav',
-			'quizzr.game'
+            'quizzr.game'
         ]);
 
     angular
@@ -23,7 +23,7 @@
 
     run.$inject = ['$http'];
 
-    function run($http, $templateCache) {
+    function run($http) {
         $http.defaults.xsrfHeaderName = 'X-CSRFToken';
         $http.defaults.xsrfCookieName = 'csrftoken';
     }

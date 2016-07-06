@@ -3,18 +3,14 @@
 
   angular
     .module('quizzr.game', [
-      'quizzr.game.controllers',
-        'quizzr.game.services',
-		'quizzr.game.directives'
+      'quizzr.games.controllers',
+        'quizzr.games.services'
     ]);
 
   angular
-    .module('quizzr.game.controllers', []);
+    .module('quizzr.games.controllers', []);
 
     angular
-    .module('quizzr.game.services', []);
-	
-	angular
-    .module('quizzr.game.directives', []);
+    .module('quizzr.games.services', []);
 
 })();
