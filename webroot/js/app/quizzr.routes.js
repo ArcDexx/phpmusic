@@ -26,7 +26,17 @@
             controller: 'GamesController',
             controllerAs: 'vm',
             templateUrl: '/templates/games.html'
-        });
-
+        }).when('/signIn',
+            {
+                controller: 'SigninController',
+                controllerAs: 'vm',
+                templateUrl: '/templates/inscription.html'
+            })
+            .when('/account',
+            {
+                controller: 'SigninController',
+                controllerAs: 'vm',
+                templateUrl: '/templates/Account.html'
+            });
     }
 })();
