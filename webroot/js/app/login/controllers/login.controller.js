@@ -23,5 +23,9 @@
     function signin() {
       Login.login(vm.login, vm.password);
     }
+    
+    function signup() {
+      Login.register()
+    }
   }
 })();
