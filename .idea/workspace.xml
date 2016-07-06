@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5e208b9-798f-4597-b10d-497acf7b71fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/RankingsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/app/audio/audio.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/app/audio/services/audio.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/app/utils/functions.utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/app/utils/utils.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/templates/game.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/templates/games.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Bob Marley - One Love.mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Bob Marley - One Love.mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Bob Marley-No Women no Cry.mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Bob Marley-No Women no Cry.mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Deep Purple smoke on the water.mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Deep Purple smoke on the water.mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Deep Purple-Child in Time.mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Deep Purple-Child in Time.mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Dire Straits - Money For Nothing.mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Dire Straits - Money For Nothing.mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Dire Straits - Sultans Of Swing (Alchemy Live).mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Dire Straits - Sultans Of Swing (Alchemy Live).mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Johnny Cash   I Walk the Line.mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Johnny Cash   I Walk the Line.mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Like a Rolling Stone (bob dylan).mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Like a Rolling Stone (bob dylan).mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Pink Floyd - Money (Official Music Video).mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Pink Floyd - Money (Official Music Video).mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/Satisfaction (Rolling Stones).mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/Satisfaction (Rolling Stones).mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/The Rolling Stones - Paint It, Black (Official Lyric Video).mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/The Rolling Stones - Paint It, Black (Official Lyric Video).mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/songs/hits/The happiest days of our lives - Pink Floyd.mp3" afterPath="$PROJECT_DIR$/webroot/songs/hits/The happiest days of our lives - Pink Floyd.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.php" afterPath="$PROJECT_DIR$/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/GamesController.php" afterPath="$PROJECT_DIR$/src/Controller/GamesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/UsersController.php" afterPath="$PROJECT_DIR$/src/Controller/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Layout/default.ctp" afterPath="$PROJECT_DIR$/src/Template/Layout/default.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/game/controllers/games.controller.js" afterPath="$PROJECT_DIR$/webroot/js/app/game/controllers/games.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/game/services/games.service.js" afterPath="$PROJECT_DIR$/webroot/js/app/game/services/games.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/quizzr.js" afterPath="$PROJECT_DIR$/webroot/js/app/quizzr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/quizzr.routes.js" afterPath="$PROJECT_DIR$/webroot/js/app/quizzr.routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/templates/game.html" afterPath="$PROJECT_DIR$/webroot/templates/game.html" />
     </list>
     <ignored path="phpmusic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,8 +68,8 @@
       <file leaf-file-name="game.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webroot/templates/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="75" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
+            <state relative-caret-position="221">
+              <caret line="25" column="118" selection-start-line="25" selection-start-column="118" selection-end-line="25" selection-end-column="118" />
               <folding />
             </state>
           </provider>
@@ -125,8 +98,8 @@
       <file leaf-file-name="games.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webroot/js/app/game/controllers/games.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+            <state relative-caret-position="306">
+              <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -184,7 +157,6 @@
         <option value="$PROJECT_DIR$/src/Template/Games/index.ctp" />
         <option value="$PROJECT_DIR$/webroot/js/app/quizzr.routes.js" />
         <option value="$PROJECT_DIR$/webroot/js/app/utils/functions.utils.js" />
-        <option value="$PROJECT_DIR$/webroot/templates/game.html" />
         <option value="$PROJECT_DIR$/webroot/js/app/audio/audio.module.js" />
         <option value="$PROJECT_DIR$/webroot/js/app/audio/services/audio.service.js" />
         <option value="$PROJECT_DIR$/src/Template/Layout/default.ctp" />
@@ -194,6 +166,7 @@
         <option value="$PROJECT_DIR$/config/routes.php" />
         <option value="$PROJECT_DIR$/src/Controller/RankingsController.php" />
         <option value="$PROJECT_DIR$/src/Controller/GamesController.php" />
+        <option value="$PROJECT_DIR$/webroot/templates/game.html" />
         <option value="$PROJECT_DIR$/webroot/js/app/game/controllers/games.controller.js" />
       </list>
     </option>
@@ -616,12 +589,12 @@
       <workItem from="1467769982374" duration="105000" />
       <workItem from="1467770122483" duration="182000" />
       <workItem from="1467775546108" duration="14876000" />
-      <workItem from="1467792106354" duration="14013000" />
+      <workItem from="1467792106354" duration="15354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41955000" />
+    <option name="totallyTimeSpent" value="43296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1009,14 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webroot/templates/game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="75" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webroot/js/app/game/services/games.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1033,10 +998,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/templates/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="118" selection-start-line="25" selection-start-column="118" selection-end-line="25" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webroot/js/app/game/controllers/games.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+        <state relative-caret-position="306">
+          <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
           <folding />
         </state>
       </provider>

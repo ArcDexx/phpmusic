@@ -51,14 +51,14 @@
             var newSample = Math.floor(($scope.time - $scope.initTime) / (songDuration + pauseDuration));
             if (newSample != $scope.currentSample) {
                 $scope.currentSample = newSample;
-                if ($scope.currentSample >= 0 && $scope.currentSample <= $scope.totalNb) {
+                if ($scope.currentSample >= 0 && $scope.currentSample < $scope.totalNb) {
                     $scope.currentAudio = $scope.samples[$scope.currentSample].sample;
                     Audio.play("/songs/hits/" + $scope.currentAudio);
                 }
                 else
                     $scope.currentAudio = undefined;
             }
-            $scope.percentProgress = Math.round(($scope.time - $scope.initTime) / (($scope.initTime + $scope.samples.length * (songDuration + pauseDuration)) - $scope.initTime) * 100).toString();
+            $scope.percentProgress = Math.min(100, Math.round(($scope.time - $scope.initTime) / (($scope.initTime + $scope.samples.length * (songDuration + pauseDuration)) - $scope.initTime) * 100));
         }
 
         function loadGameById() {
@@ -71,6 +71,7 @@
                     $scope.initTime = (new Date(data.start_time).getTime() / 1000);
                     $scope.samples = data.samples;
                     $scope.totalNb = $scope.samples.length;
+                    $scope.nextGame = Math.floor(Math.max(0, $scope.initTime + $scope.samples.length * (songDuration + pauseDuration) + endPauseDuration - $scope.time));
 
                     if ($scope.time > $scope.initTime + $scope.samples.length * (songDuration + pauseDuration)) {
                         $scope.percentProgress = 100;
