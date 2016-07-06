@@ -25,6 +25,17 @@ class UsersController extends AppController
         $this->set('_serialize', ['users']);
     }
 
+
+    public function get_user_by_points()
+    {
+        $users = $this->Users
+            ->find('all')
+            ->order(['total_score' => 'DESC']);
+        $this->set(compact('users'));
+        $this->set('_serialize', array('users'));
+    }
+
+
     /**
      * View method
      *

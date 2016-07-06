@@ -30,6 +30,7 @@ class GamesController extends AppController
      * @return \Cake\Network\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
+
     public function view($id = null)
     {
         $game = $this->Games->get($id, [
@@ -37,6 +38,15 @@ class GamesController extends AppController
         ]);
         $this->set('game', $game);
         $this->set('_serialize', ['game']);
+    }
+
+
+    public function get_all()
+    {
+        $games = $this->Games
+            ->find('all');
+        $this->set(compact('games'));
+        $this->set('_serialize', array('games'));
     }
 
     /**

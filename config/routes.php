@@ -71,11 +71,16 @@ Router::scope('/', function (RouteBuilder $routes) {
      * You can remove these routes once you've connected the
      * routes you want in your application.
      */
+
+
+
     $routes->fallbacks('DashedRoute');
     $routes->extensions(['json']);
-
+    $routes->resources('Games');
+    $routes->resources('Home');
     $routes->resources('Users');
 });
+
 
 /**
  * Load all plugin routes.  See the Plugin documentation on
