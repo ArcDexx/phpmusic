@@ -5,10 +5,10 @@
       <paths name="cakemti">
         <serverdata>
           <mappings>
-            <mapping deploy="/phpmusic" local="$PROJECT_DIR$" web="/webroot" />
+            <mapping deploy="/phpmusic/app" local="$PROJECT_DIR$" web="/webroot" />
           </mappings>
           <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/app/vendor" />
+            <excludedPath local="true" path="$PROJECT_DIR$/vendor" />
             <excludedPath path="/phpmusic/app/vendor" />
           </excludedPaths>
         </serverdata>

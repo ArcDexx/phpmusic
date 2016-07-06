@@ -1,0 +1,50 @@
+<div class="col-md-8 col-md-offset-2 ">
+    <div class="conteneur-tete">
+    <h2 style="text-align: center"> Bienvenue sur Quizzr</h2>
+    </div>
+</div>
+
+<div class="col-md-6 col-md-offset-2">
+    <div class="conteneur-corp">
+    <h4 class="center"> Choisissez une partie à rejoindre</h4>
+    <hr>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Catégorie</th>
+        <th>Joueurs</th>
+        <th>Manche</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="game in games">
+            <td>{{game.genre}}</td>
+            <td>{{game.ng_players}}</td>
+            <td>{{game.current_sample}}</td>
+            <td><a class="btn btn-primary pull-right" href="#/game/{{game.id}}">Rejoindre</a></td>
+        </tr>
+    </tbody>
+
+  </table>
+   <br>
+</div>
+</div>
+<div class="col-md-2 col-md-offset-0">
+    <div class="conteneur-droit">
+    <h4 class="center">Classement</h4>
+    <hr>
+     <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Rang</th>
+        <th>Pseudo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="rank in vm.rankings">
+        <td>{game.}</td>
+      </tr>
+    </tbody>
+     </table>
+    </div>
+</div>

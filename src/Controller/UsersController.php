@@ -11,6 +11,11 @@ use App\Model\Entity\User;
  */
 class UsersController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('RequestHandler');
+    }
 
     /**
      * Index method
@@ -24,17 +29,6 @@ class UsersController extends AppController
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
     }
-
-
-    public function get_user_by_points()
-    {
-        $users = $this->Users
-            ->find('all')
-            ->order(['total_score' => 'DESC']);
-        $this->set(compact('users'));
-        $this->set('_serialize', array('users'));
-    }
-
 
     /**
      * View method

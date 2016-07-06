@@ -7,7 +7,9 @@
             'quizzr.routes',
             'quizzr.login',
             'quizzr.nav',
-            'quizzr.game'
+            'quizzr.game',
+            'quizzr.utils',
+            'quizzr.audio'
         ]);
 
     angular

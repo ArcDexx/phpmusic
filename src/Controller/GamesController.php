@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
+
 /**
  * Games Controller
  *
@@ -10,7 +11,13 @@ use App\Controller\AppController;
  */
 class GamesController extends AppController
 {
+    public $uses=array('User','Sample');
 
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('RequestHandler');
+    }
     /**
      * Index method
      *
@@ -34,10 +41,17 @@ class GamesController extends AppController
     public function view($id = null)
     {
         $game = $this->Games->get($id, [
-            'contain' => ['Samples', 'Users']
+            'contain' => ['Samples']
         ]);
-        $this->set('game', $game);
-        $this->set('_serialize', ['game']);
+
+        if ($game->start_time == null) {
+            $date = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
+            $game->start_time = $date->getTimestamp();
+            $this->Games->save($game);
+        }
+
+        $this->set(compact('game'));
+        $this->set('_serialize', 'game');
     }
 
 
@@ -56,20 +70,53 @@ class GamesController extends AppController
      */
     public function add()
     {
-        $game = $this->Games->newEntity();
+        $this->loadModel('Samples');
+        $this->loadModel('GamesSamples');
+
         if ($this->request->is('post')) {
-            $game = $this->Games->patchEntity($game, $this->request->data);
-            if ($this->Games->save($game)) {
-                $this->Flash->success(__('The game has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('The game could not be saved. Please, try again.'));
+            $data=$this->request->input('json_decode')->game;
+            $game = $this->Games->find('all')->where(['Games.genre' => $data->genre])->order('id DESC')->contain(['Samples'])->first();
+            $date = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
+
+            if ($game->start_time != null && $date->getTimestamp() - $game->start_time->getTimestamp() > (count($game->samples) * (15+5) + 30)) {
+                $game = $this->Games->newEntity();
+                $game->start_time = null;
+                $game->genre = $data->genre;
+                $game->current_sample = 0;
+                $game->current_first = 0;
+                $game->current_second = 0;
+                $game->current_third = 0;
+                $game->nb_players = 0;
+
+                if ($this->Games->save($game)) {
+                    $this->set(compact('game'));
+                    $this->set('_serialize', ['game']);
+                } else {
+                    $this->Flash->error(__('The game could not be saved. Please, try again.'));
+                }
+
+                $samples = $this->Samples->find('all')->where(['Samples.genre' => $game->genre])
+                    ->order('rand()')
+                    ->limit(15);
+
+                foreach ($samples as $sample) {
+                    $gameSample = $this->GamesSamples->newEntity();
+                    $gameSample->sample_id = $sample->id;
+                    $gameSample->game_id = $game->id;
+
+                    if ($this->GamesSamples->save($gameSample)) {
+
+                    } else {
+                        $this->Flash->error(__('The game could not be saved. Please, try again.'));
+                    }
+                }
+                $this->set(compact('game'));
+                $this->set('_serialize', ['game']);
+           } else {
+                $this->set(compact('game'));
+                $this->set('_serialize', ['game']);
             }
         }
-        $samples = $this->Games->Samples->find('list', ['limit' => 200]);
-        $users = $this->Games->Users->find('list', ['limit' => 200]);
-        $this->set(compact('game', 'samples', 'users'));
-        $this->set('_serialize', ['game']);
     }
 
     /**
