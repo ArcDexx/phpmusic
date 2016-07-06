@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5e208b9-798f-4597-b10d-497acf7b71fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/app/game/controllers/games.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/app/game/services/games.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/app/nav/controllers/nav.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/templates/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Home/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Home/index.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Layout/default.ctp" afterPath="$PROJECT_DIR$/src/Template/Layout/default.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/game/game.module.js" afterPath="$PROJECT_DIR$/webroot/js/app/game/game.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/login/controllers/login.controller.js" afterPath="$PROJECT_DIR$/webroot/js/app/login/controllers/login.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/login/login.module.js" afterPath="$PROJECT_DIR$/webroot/js/app/login/login.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/login/services/login.service.js" afterPath="$PROJECT_DIR$/webroot/js/app/login/services/login.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/nav/nav.module.js" afterPath="$PROJECT_DIR$/webroot/js/app/nav/nav.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/quizzr.config.js" afterPath="$PROJECT_DIR$/webroot/js/app/quizzr.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/quizzr.js" afterPath="$PROJECT_DIR$/webroot/js/app/quizzr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/js/app/quizzr.routes.js" afterPath="$PROJECT_DIR$/webroot/js/app/quizzr.routes.js" />
     </list>
     <ignored path="phpmusic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,12 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="default.ctp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="default.ctp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Template/Layout/default.ctp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1054">
               <caret line="77" column="15" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ctp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Template/Home/index.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+              <folding>
+                <element signature="e#479#728#0#PHP" expanded="true" />
+                <element signature="e#1153#1342#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,6 +70,7 @@
         <option value="$PROJECT_DIR$/webroot/js/app/quizzr.routes.js" />
         <option value="$PROJECT_DIR$/webroot/templates/login.html" />
         <option value="$PROJECT_DIR$/src/Template/Layout/default.ctp" />
+        <option value="$PROJECT_DIR$/src/Template/Home/index.ctp" />
       </list>
     </option>
   </component>
@@ -192,6 +190,28 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpmusic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpmusic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Template" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -257,12 +277,12 @@
       <workItem from="1467729961585" duration="11005000" />
       <workItem from="1467749634828" duration="1774000" />
       <workItem from="1467769982374" duration="105000" />
-      <workItem from="1467770122483" duration="45000" />
+      <workItem from="1467770122483" duration="182000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12929000" />
+    <option name="totallyTimeSpent" value="13066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -510,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Home/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webroot/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -537,6 +550,17 @@
         <state relative-caret-position="1054">
           <caret line="77" column="15" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Home/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <folding>
+            <element signature="e#479#728#0#PHP" expanded="true" />
+            <element signature="e#1153#1342#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -18,6 +18,7 @@
     </thead>
     <tbody>
     <?php
+    /*
     foreach ($allgames as $game )
     {
         echo("<tr>");
@@ -26,6 +27,7 @@
         echo ( '<td>'.$game->current_sample.'</td>');
         echo("</tr>");
     }
+    */
 
     ?>
 
@@ -50,14 +52,14 @@
     <tbody>
 
     <?php
-    foreach ($allusers as $user )
+    /*foreach ($allusers as $user )
     {
       echo("<tr>");
         echo ( '<td>'.$user->total_score.'</td>');
         echo ( '<td>'.$user->login.'</td>');
         echo("</tr>");
     }
-
+    */
     ?>
     </tbody>
      </table>
