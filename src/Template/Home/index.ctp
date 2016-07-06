@@ -47,14 +47,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>thibaut</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>alex</td>
-      </tr>
+
+    <?php
+    foreach ($allusers as $user )
+    {
+      echo("<tr>");
+        echo ( '<td>'.$user->total_score.'</td>');
+        echo ( '<td>'.$user->login.'</td>');
+        echo("</tr>");
+    }
+
+    ?>
     </tbody>
      </table>
     </div>
