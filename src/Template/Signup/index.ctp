@@ -1,3 +1,32 @@
+<?php
+if (isset($_GET['failpass']))
+{
+  ?>
+  <div class="alert alert-danger col-md-4 col-md-offset-4 conteneur-corps">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Attention !</strong> Les mots de passe ne sont pas identiques
+  </div>
+  <?php
+}
+else if (isset($_GET['failmail']))
+{
+  ?>
+  <div class="alert alert-danger col-md-4 col-md-offset-4 conteneur-corps">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Attention !</strong> Les adresses e-mail ne sont pas identiques
+  </div>
+  <?php
+}
+else if (isset($_GET['failmail']))
+{
+  ?>
+  <div class="alert alert-danger col-md-4 col-md-offset-4 conteneur-corps">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Attention !</strong> Le login ou l'adresse e-mail sont déjà pris
+  </div>
+  <?php
+}
+?>
 <div class="col-md-4 col-md-offset-4 conteneur-tete" >
   <h2 style="text-align: center">Inscription</h2>
 </div>
