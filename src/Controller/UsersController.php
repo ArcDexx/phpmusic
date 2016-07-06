@@ -17,7 +17,7 @@ class UsersController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    
+
     public function index()
     {
         $users = $this->paginate($this->Users);
@@ -67,6 +67,12 @@ class UsersController extends AppController
     public function disconnect()
     {
       $this->request->session()->delete('isLogged');
+      $this->request->session()->delete('login');
+      $this->request->session()->delete('id');
+      $this->request->session()->delete('image');
+      $this->request->session()->delete('total_score');
+      $this->request->session()->delete('games_won');
+      $this->request->session()->delete('games_played');
 
       $this->redirect(array('controller' => 'home', 'action' => 'index'));
     }
@@ -84,6 +90,7 @@ class UsersController extends AppController
         $this->request->session()->write('isLogged', 'true');
         $this->request->session()->write('login', $data->login);
         $this->request->session()->write('id', $data->id);
+        $this->request->session()->write('image', $data->image);
         $this->request->session()->write('total_score', $data->total_score);
         $this->request->session()->write('games_won', $data->games_won);
         $this->request->session()->write('games_played', $data->games_played);
@@ -101,6 +108,9 @@ class UsersController extends AppController
      */
     public function edit($id = null)
     {
+        if (isset($this->request->data['image']))
+          $this->request->session()->write('image', $this->request->data['image']);
+
         $user = $this->Users->get($this->request->session()->read('id'), [
             'contain' => []
           ]);

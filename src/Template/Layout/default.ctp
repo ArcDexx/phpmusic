@@ -101,6 +101,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                   <a href="/account" class="btn btn-info">Mon compte</a></p>
                 </li>
               </ul>
+              <img class="navbar-right" style="width: 40px; height : 40px; margin-right : 10px; margin-top : 5px" src="<?php echo $this->request->session()->read('image')?>">
               <p class="navbar-right navbar-text" style="margin-right : 10px">Connecté en tant que <?php echo $this->request->session()->read('login') ?></p>
               <?php
             }
