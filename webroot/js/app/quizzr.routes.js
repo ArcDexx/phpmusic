@@ -27,9 +27,9 @@
             controller: 'GamesController',
             controllerAs: 'vm',
             templateUrl: '/templates/games.html'
-        }).when('/signIn',
+        }).when('/signup',
             {
-                controller: 'SigninController',
+                controller: 'LoginController',
                 controllerAs: 'vm',
                 templateUrl: '/templates/inscription.html'
             })
