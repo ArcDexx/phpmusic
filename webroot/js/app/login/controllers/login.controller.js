@@ -11,9 +11,9 @@
     var vm = this;
 
     vm.signin = signin;
+    vm.signup = signup;
 
     activate();
-    
     function activate() {
       if (Login.isAuthenticated()) {
         $location.url('/');
@@ -21,11 +21,12 @@
     }
     
     function signin() {
+      
       Login.login(vm.login, vm.password);
     }
     
     function signup() {
-      Login.register()
+      Login.register(vm.login,vm.image, vm.email, vm.password )
     }
   }
 })();

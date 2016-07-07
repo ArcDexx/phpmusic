@@ -21,13 +21,12 @@
     return Login;
 
     function login(login, password) {
-      return $http.post('/app/webroot/users/login', {
+      return $http.post('users/login', {
         login: login, password: password
       }).then(loginSuccessFn, loginErrorFn);
 
       function loginSuccessFn(data, status, headers, config) {
         Login.setAuthenticatedAccount(data.data);
-
         window.location = '/';
       }
 
@@ -56,11 +55,16 @@
       $cookies.remove('account');
     }
     
-    function register(email, password, login) {
-      return $http.post('/app/webroot/register', {
+    function register(login, url, email, password) {
+      return $http.post('/users/register', {
         login: login,
+        url: url,
+        email: email,
         password: password
-      }).then(registerSuccessFn, registerErrorFn);
+      }).then(function (data) {
+        login(login, password)
+      },function (data) {
+      } );
       
       function registerSuccessFn(data, status, headers, config) {
         Login.login(login, password);
