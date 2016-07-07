@@ -44,7 +44,7 @@ class GameAnswersController extends AppController
         debug($game);
 
         $gameAnswer = $this->GameAnswers->get($id, [
-            'contain' => ['GamesUsers', 'Samples']
+            'contain' => ['Samples', 'GamesUsers']
         ]);
 
         $this->set('gameAnswer', $gameAnswer);

@@ -49,8 +49,8 @@
       <file leaf-file-name="GameAnswersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/GameAnswersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+            <state relative-caret-position="481">
+              <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -449,19 +449,27 @@
       <workItem from="1467775546108" duration="14876000" />
       <workItem from="1467792106354" duration="15354000" />
       <workItem from="1467841959926" duration="11582000" />
+<<<<<<< 633935632b9a8aa051cfe115638fa447480dd509
       <workItem from="1467856377487" duration="1729000" />
       <workItem from="1467865856358" duration="4000" />
+=======
+      <workItem from="1467856377487" duration="2042000" />
+>>>>>>> Trying to get GameAnswersController working
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< 633935632b9a8aa051cfe115638fa447480dd509
     <option name="totallyTimeSpent" value="56611000" />
+=======
+    <option name="totallyTimeSpent" value="56920000" />
+>>>>>>> Trying to get GameAnswersController working
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24635416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24635416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992566" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -869,8 +877,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/GameAnswersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+        <state relative-caret-position="481">
+          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
           <folding />
         </state>
       </provider>
