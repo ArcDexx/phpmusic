@@ -164,4 +164,12 @@ class GamesController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
+    public function checkinput($input, $expected)
+    {
+      $percent;
+      similar_text($input, $expected, $percent);
+
+      return $percent;
+    }
 }
