@@ -33,7 +33,11 @@ class RankingsController extends AppController
 
     public function index()
     {
-        $users = $this->Users->find('all')->order(['total_score' => 'DESC']);
+        $this->loadModel('Users');
+        $this->loadModel('GameAnswers');
+        $users = $this->Users->find('all')->contain('Games');
+        $answers->find('all')->
+        debug($answers);
         $this->set(compact('users'));
         $this->set('_serialize', array('users'));
     }

@@ -21,6 +21,7 @@ class GameAnswersController extends AppController
         $this->paginate = [
             'contain' => ['GameUsers', 'Samples']
         ];
+        
         $gameAnswers = $this->paginate($this->GameAnswers);
 
         $this->set(compact('gameAnswers'));
@@ -36,6 +37,11 @@ class GameAnswersController extends AppController
      */
     public function view($id = null)
     {
+        $this->loadModel('Games');
+        $game = $this->Games->find('all')->where(['id' => $id])->first();
+
+        debug($game);
+
         $gameAnswer = $this->GameAnswers->get($id, [
             'contain' => ['GameUsers', 'Samples']
         ]);
