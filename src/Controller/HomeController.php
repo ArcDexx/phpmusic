@@ -8,11 +8,17 @@ use Cake\ORM\TableRegistry;
 
 class HomeController extends AppController
 {
-
-
   public function index()
   {
 
+  }
+
+  private function checkinput($input, $expected)
+  {
+    $percent;
+    similar_text($input, $expected, $percent);
+
+    return $percent;
   }
 }
 ?>
