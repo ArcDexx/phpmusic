@@ -4,20 +4,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * GameAnswer Entity
+ * GamesUser Entity
  *
  * @property int $id
- * @property int $game_user_id
- * @property int $sample_id
- * @property bool $artist
- * @property bool $title
- * @property \Cake\I18n\Time $time
- * @property int $points
+ * @property int $game_id
+ * @property int $user_id
+ * @property int $score
  *
- * @property \App\Model\Entity\GameUser $game_user
- * @property \App\Model\Entity\Sample $sample
+ * @property \App\Model\Entity\Game $game
+ * @property \App\Model\Entity\User $user
  */
-class GameAnswer extends Entity
+class GamesUser extends Entity
 {
 
     /**

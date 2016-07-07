@@ -1,13 +1,13 @@
 <?php
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\AccountController;
+use App\Controller\SignupController;
 use Cake\TestSuite\IntegrationTestCase;
 
 /**
  * App\Controller\GamesController Test Case
  */
-class AccountControllerTest extends IntegrationTestCase
+class SignupControllerTest extends IntegrationTestCase
 {
 
     /**
@@ -27,7 +27,7 @@ class AccountControllerTest extends IntegrationTestCase
 
     public function testIndex()
     {
-      $this->get('/account');
+      $this->get('/signup');
 
       $this->assertResponseOk();
     }

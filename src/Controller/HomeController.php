@@ -12,13 +12,5 @@ class HomeController extends AppController
   {
 
   }
-
-  private function checkinput($input, $expected)
-  {
-    $percent;
-    similar_text($input, $expected, $percent);
-
-    return $percent;
-  }
 }
 ?>
