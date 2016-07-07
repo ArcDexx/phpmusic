@@ -146,13 +146,6 @@ class GamesController extends AppController
         $this->set('_serialize', ['game']);
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Game id.
-     * @return \Cake\Network\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);

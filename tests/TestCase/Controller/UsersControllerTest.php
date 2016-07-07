@@ -2,7 +2,9 @@
 namespace App\Test\TestCase\Controller;
 
 use App\Controller\UsersController;
+use App\Test\TestCase\Controller\UsersControllerTest;
 use Cake\TestSuite\IntegrationTestCase;
+use App\Model\Entity\User;
 
 /**
  * App\Controller\UsersController Test Case
@@ -31,43 +33,18 @@ class UsersControllerTest extends IntegrationTestCase
       $this->assertResponseOk();
     }
 
-    /**
-     * Test view method
-     *
-     * @return void
-     */
-    public function testView()
+    public function testLogin()
     {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+      $controller = new UsersController();
 
-    /**
-     * Test add method
-     *
-     * @return void
-     */
-    public function testAdd()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+      $user = new User();
 
-    /**
-     * Test edit method
-     *
-     * @return void
-     */
-    public function testEdit()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+      $data = $controller->Users->find()->first();
 
-    /**
-     * Test delete method
-     *
-     * @return void
-     */
-    public function testDelete()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
+      $user->login = $data->login;
+
+      $result = $controller->Users->save($user);
+
+      $this->assertFalse($result);
     }
 }
