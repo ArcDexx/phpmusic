@@ -25,7 +25,8 @@ class GamesController extends AppController
      */
     public function index()
     {
-        $games = $this->paginate($this->Games);
+        $this->loadModel('GamesUsers');
+        $games = $this->Games->find('all')->where()->contain(['Users'])->all();
         $this->set(compact('games'));
         $this->set('_serialize', ['games']);
     }
@@ -40,6 +41,7 @@ class GamesController extends AppController
 
     public function view($id = null)
     {
+        $this->loadModel('GamesUsers');
         $game = $this->Games->get($id, [
             'contain' => ['Samples']
         ]);
@@ -48,6 +50,14 @@ class GamesController extends AppController
             $date = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
             $game->start_time = $date->getTimestamp();
             $this->Games->save($game);
+        }
+        $gameUser = $this->GamesUsers->find('all')->where(['game_id' => $id, 'user_id' => $this->Auth->user('id')])->first();
+
+        if ($gameUser == null) {
+            $gameUser = $this->GamesUsers->newEntity();
+            $gameUser->game_id = $id;
+            $gameUser->user_id = $this->Auth->user('id');
+            $this->GamesUsers->save($gameUser);
         }
 
         $this->set(compact('game'));
@@ -158,6 +168,11 @@ class GamesController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    private function getTimeNow() {
+        $date = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
+        return $date->getTimestamp();
+    }
+
     private function getCurrentSample($game) {
       $date = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
       $id = floor(($date->getTimestamp() - $game->start_time->getTimestamp()) / ((15 + 5)));
@@ -172,7 +187,7 @@ class GamesController extends AppController
 public function submit()
 {
   $text = $this->request->data['submitArtist'];
-  $userId = 1;
+  $userId = $this->Auth->user('id');
   $gameId = $this->request->data['gameId'];
 
   $this->findArtistTitle($text, $userId, $gameId);
@@ -187,24 +202,44 @@ public function submit()
     $this->loadModel('GameAnswers');
     $game = $this->Games->find('all')->contain(['Samples'])->where(['id' => $gameId])->first();
 
-    $gameUser = $this->GamesUsers->find('all')->where(['game_id' => $gameId, 'user_id' => $userId]);
+    $gameUser = $this->GamesUsers->find('all')->where(['game_id' => $gameId, 'user_id' => $userId])->first();
     $Sample = $this->getCurrentSample($game);
 
-    $answer = $this->GameAnswers->find('all')->where(['sample_id' => $Sample->id, 'game_user_id' => $gameUser->id])->first();
+      $artist = false;
+      $title = false;
 
-    if ($answer == null) {
-      $answer = $this->GameAnswers->newEntity();
-    }
-
-    if ($this->checkinput($text, $Sample->artist) > 80)
+    if ($this->checkinput($text, $Sample->artist) >= 80)
     {
-      $answer->artist = true;
+      $artist = true;
     }
 
-    if ($this->checkinput($text, $Sample->title) > 80)
+    if ($this->checkinput($text, $Sample->title) >= 80)
     {
-      $answer->title = true;
+      $title = true;
     }
+
+      if ($artist || $title) {
+          $answer = $this->GameAnswers->find('all')->where(['sample_id' => $Sample->id, 'game_user_id' => $gameUser->id])->first();
+
+          if ($answer == null) {
+              $answer = $this->GameAnswers->newEntity();
+              $answer->game_user_id = $gameUser->id;
+              $answer->sample_id = $Sample->id;
+              $answer->points = 0;
+          }
+
+          if ($artist) { $answer->artist = $artist; }
+          if ($title) { $answer->title = $title; }
+          $answer->time = $this->getTimeNow();
+          $this->GameAnswers->save($answer);
+      } else {
+          $answer = $this->GameAnswers->find('all')->where(['sample_id' => $Sample->id, 'game_user_id' => $gameUser->id])->first();
+
+          if ($answer == null) {
+              $answer = $this->GameAnswers->newEntity();
+          }
+          $this->GameAnswers->save($answer);
+      }
 
     $this->set(compact('answer'));
     $this->set('_serialize', ['answer']);
@@ -212,8 +247,7 @@ public function submit()
 
     public function checkinput($input, $expected)
     {
-      $percent;
-      similar_text($input, $expected, $percent);
+      similar_text(strtolower($input), strtolower($expected), $percent);
 
       return $percent;
     }

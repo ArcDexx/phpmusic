@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Network\Exception\ForbiddenException;
 
 /**
  * Application Controller
@@ -43,6 +44,14 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'loginAction'=>[
+                'controller'=>'Pages',
+                'action'=>'unauthorized',
+                '_ext'=>'json'],
+            'authorize'=>['Controller'],
+            'authError'=>"Error"
+        ]);
     }
 
     /**
@@ -58,5 +67,65 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+    }
+
+    public function checkUserToken()
+    {
+        $request_token = $this->getRequestToken();
+        if (!$request_token) {
+            return false;
+        }
+        if ($request_token != $this->userToken()) {
+            return false;
+        }
+        return true;
+    }
+
+    public function getRequestToken()
+    {
+        $headers = $this->getHeaders();
+        if (!isset($headers['Authorization'])) return false;
+        $token = explode(" ", $headers['Authorization']);
+        return $token[1];
+    }
+
+    public function beforeFilter(Event $event)
+    {
+        $this->user_id = $this->Auth->user('id');
+        if($this->user_id)
+        {
+            if(!$this->checkUserToken())
+            {
+                $this->Auth->logout();
+                throw new ForbiddenException("Invalid Token YO!");
+            }
+        }
+        $this->set('authUser', $this->Auth->user());
+    }
+
+    /**
+     * Get Request headers
+     */
+    private function getHeaders()
+    {
+        $headers = getallheaders();
+        return $headers;
+    }
+
+    /**
+     * Get User token
+     *
+     */
+    public function userToken()
+    {
+        return $this->Auth->user('token');
+    }
+
+    /**
+     * Authorization default true
+     */
+    public function isAuthorized($user)
+    {
+        return true;
     }
 }

@@ -5,9 +5,9 @@
     .module('quizzr.login.services')
     .factory('Login', Login);
 
-  Login.$inject = ['$cookies', '$http'];
+  Login.$inject = ['$cookies', '$http', '$location'];
   
-  function Login($cookies, $http) {
+  function Login($cookies, $http, $location) {
     var Login = {
       getAuthenticatedAccount: getAuthenticatedAccount,
       isAuthenticated: isAuthenticated,
@@ -21,17 +21,16 @@
     return Login;
 
     function login(login, password) {
-      return $http.post('users/login', {
+      return $http.post('login/index.json', {
         login: login, password: password
       }).then(loginSuccessFn, loginErrorFn);
 
       function loginSuccessFn(data, status, headers, config) {
         Login.setAuthenticatedAccount(data.data);
-        window.location = '/';
       }
 
       function loginErrorFn(data, status, headers, config) {
-        console.error('Failed');
+        console.log('LOGIN Failed');
       }
     }
 
@@ -44,15 +43,19 @@
     }
 
     function isAuthenticated() {
-      return !!$cookies.get('account');
+      if ($cookies.get('token') && $cookies.get('id'))
+          return true;
+      else
+          return false;
     }
 
-    function setAuthenticatedAccount(account) {
-      $cookies.put('account', JSON.stringify(account));
+    function setAuthenticatedAccount(data) {
+      $cookies.put('token', data.user.token);
+      $cookies.put('id', data.user.id);
+      $location.url('/games');
     }
 
     function unauthenticate() {
-      $cookies.remove('account');
     }
     
     function register(login, url, email, password) {
@@ -81,8 +84,6 @@
       
       function logoutSuccessFn(data, status, headers, config) {
         Login.unauthenticate();
-
-        window.location = '/';
       }
 
       function logoutErrorFn(data, status, headers, config) {

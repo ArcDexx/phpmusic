@@ -87,6 +87,10 @@ class GamesTable extends Table
             ->integer('current_third')
             ->allowEmpty('current_third');
 
+        $validator
+            ->dateTime('start_time')
+            ->allowEmpty('start_time');
+
         return $validator;
     }
 }

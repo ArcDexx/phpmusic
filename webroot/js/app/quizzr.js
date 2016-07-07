@@ -3,6 +3,7 @@
 
     angular
         .module('quizzr', [
+            'quizzr.factories',
             'quizzr.config',
             'quizzr.routes',
             'quizzr.login',
@@ -19,9 +20,11 @@
         .module('quizzr.routes', ['ngRoute']);
 
     angular
+        .module('quizzr.factories', []);
+
+    angular
         .module('quizzr')
         .run(run);
-
 
     run.$inject = ['$http'];
 

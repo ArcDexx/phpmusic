@@ -54,7 +54,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
-    $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+    $routes->connect('/pages/forbidden', ['controller' => 'Pages', 'action' => 'forbidden']);
+    $routes->connect('/pages/unauthorized', ['controller' => 'Pages', 'action' => 'unauthorized']);
 
     /**
      * Connect catchall routes for all controllers.

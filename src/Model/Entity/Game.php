@@ -13,8 +13,10 @@ use Cake\ORM\Entity;
  * @property int $current_first
  * @property int $current_second
  * @property int $current_third
+ * @property \Cake\I18n\Time $start_time
  *
  * @property \App\Model\Entity\Sample[] $samples
+ * @property \App\Model\Entity\GamesUser[] $games_users
  * @property \App\Model\Entity\User[] $users
  */
 class Game extends Entity

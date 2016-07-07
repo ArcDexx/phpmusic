@@ -5,9 +5,9 @@
     .module('quizzr.config')
     .config(config);
 
-  config.$inject = ['$locationProvider'];
+  config.$inject = ['$locationProvider', '$httpProvider'];
   
-  function config($locationProvider) {
-
+  function config($locationProvider, $httpProvider) {
+    $httpProvider.interceptors.push('authInterceptor');
   }
 })();

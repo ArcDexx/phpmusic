@@ -35,6 +35,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-cookies.min.js') ?>
 
     <?= $this->Html->script('/js/app/quizzr.js') ?>
+    <?= $this->Html->script('/js/app/factories/interceptor.factory.js') ?>
     <?= $this->Html->script('/js/app/quizzr.routes.js') ?>
     <?= $this->Html->script('/js/app/quizzr.config.js') ?>
 
@@ -84,7 +85,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <li class="active"><a href="/#/">Home<span class="sr-only">(current)</span></a></li>
           </ul>
           <?php
-            if (!$this->request->session()->read("isLogged") == 'true')
+            if (!$authUser)
             {
           ?>
           <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
