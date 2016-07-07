@@ -3,4 +3,5 @@
 /tmp/*
 /logs/*
 .idea/*
+.idea/workspace.xml
 /nbproject/private/
