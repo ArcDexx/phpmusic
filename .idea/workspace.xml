@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< 2593f01419558252e24dc71f68b15a725ae44a66
     <list default="true" id="e5e208b9-798f-4597-b10d-497acf7b71fe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.php" afterPath="$PROJECT_DIR$/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/GameAnswersController.php" afterPath="$PROJECT_DIR$/src/Controller/GameAnswersController.php" />
     </list>
+    <list default="true" id="e5e208b9-798f-4597-b10d-497acf7b71fe" name="Default" comment="" />
     <ignored path="phpmusic.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -49,8 +51,8 @@
       <file leaf-file-name="GameAnswersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/GameAnswersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-170">
-              <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+            <state relative-caret-position="561">
+              <caret line="120" column="5" selection-start-line="115" selection-start-column="75" selection-end-line="120" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -564,6 +566,7 @@
       <workItem from="1467775546108" duration="14876000" />
       <workItem from="1467792106354" duration="15354000" />
       <workItem from="1467841959926" duration="11582000" />
+<<<<<<< 2593f01419558252e24dc71f68b15a725ae44a66
 <<<<<<< 2f748d1ebf8d226e3f3bdcb7f18489c64b81f775
 <<<<<<< 633935632b9a8aa051cfe115638fa447480dd509
       <workItem from="1467856377487" duration="1729000" />
@@ -574,10 +577,14 @@
 =======
       <workItem from="1467856377487" duration="4913000" />
 >>>>>>> Updated gitignore
+=======
+      <workItem from="1467856377487" duration="4991000" />
+>>>>>>> Fucking workspace?
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< 2593f01419558252e24dc71f68b15a725ae44a66
 <<<<<<< 2f748d1ebf8d226e3f3bdcb7f18489c64b81f775
 <<<<<<< 633935632b9a8aa051cfe115638fa447480dd509
     <option name="totallyTimeSpent" value="56611000" />
@@ -587,6 +594,9 @@
 =======
     <option name="totallyTimeSpent" value="59791000" />
 >>>>>>> Updated gitignore
+=======
+    <option name="totallyTimeSpent" value="59869000" />
+>>>>>>> Fucking workspace?
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -999,8 +1009,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/GameAnswersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+        <state relative-caret-position="561">
+          <caret line="120" column="5" selection-start-line="115" selection-start-column="75" selection-end-line="120" selection-end-column="5" />
           <folding />
         </state>
       </provider>
