@@ -18,14 +18,13 @@ class GameAnswersController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['GameUsers', 'Samples']
-        ];
-        
-        $gameAnswers = $this->paginate($this->GameAnswers);
+        $this->loadModel('Games');
 
-        $this->set(compact('gameAnswers'));
-        $this->set('_serialize', ['gameAnswers']);
+        $this->loadModel('GameAnswers');
+        $game = $this->Games->find('all')->where(['id' => 1419])->first();
+
+        $this->set('game', $game);
+        $this->set('_serialize', ['game']);
     }
 
     /**
@@ -38,12 +37,14 @@ class GameAnswersController extends AppController
     public function view($id = null)
     {
         $this->loadModel('Games');
+        $this->loadModel('GamesUsers');
+
         $game = $this->Games->find('all')->where(['id' => $id])->first();
 
         debug($game);
 
         $gameAnswer = $this->GameAnswers->get($id, [
-            'contain' => ['GameUsers', 'Samples']
+            'contain' => ['GamesUsers', 'Samples']
         ]);
 
         $this->set('gameAnswer', $gameAnswer);
