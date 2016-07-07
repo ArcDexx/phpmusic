@@ -26,7 +26,7 @@ class GamesController extends AppController
     public function index()
     {
         $this->loadModel('GamesUsers');
-        $games = $this->Games->find('all')->where()->contain(['Users'])->all();
+        $games = $this->Games->find('all')->limit(5)->orderDesc('id')->contain(['Users'])->all();
         $this->set(compact('games'));
         $this->set('_serialize', ['games']);
     }
@@ -88,7 +88,7 @@ class GamesController extends AppController
             $game = $this->Games->find('all')->where(['Games.genre' => $data->genre])->order('id DESC')->contain(['Samples'])->first();
             $date = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
 
-            if ($game->start_time != null && $date->getTimestamp() - $game->start_time->getTimestamp() > (count($game->samples) * (15+5) + 30)) {
+            if ($game->start_time != null && $date->getTimestamp() - $game->start_time->getTimestamp() > (count($game->samples) * (25+5) + 30)) {
                 $game = $this->Games->newEntity();
                 $game->start_time = null;
                 $game->genre = $data->genre;
@@ -107,7 +107,7 @@ class GamesController extends AppController
 
                 $samples = $this->Samples->find('all')->where(['Samples.genre' => $game->genre])
                     ->order('rand()')
-                    ->limit(15);
+                    ->limit(25);
 
                 foreach ($samples as $sample) {
                     $gameSample = $this->GamesSamples->newEntity();
@@ -175,7 +175,7 @@ class GamesController extends AppController
 
     private function getCurrentSample($game) {
       $date = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
-      $id = floor(($date->getTimestamp() - $game->start_time->getTimestamp()) / ((15 + 5)));
+      $id = floor(($date->getTimestamp() - $game->start_time->getTimestamp()) / ((25 + 5)));
       if ($id <= count($game->samples))
       {
         return $game->samples[$id];
@@ -228,10 +228,23 @@ public function submit()
               $answer->points = 0;
           }
 
-          if ($artist) { $answer->artist = $artist; }
-          if ($title) { $answer->title = $title; }
+          if ($artist) {
+              if (!$answer->artist && $answer->artist == 0) {
+                  $answer->points += 10;
+                  $gameUser->score += 10;
+                  $answer->artist = $artist;
+              }
+          }
+          if ($title) {
+              if (!$answer->title && $answer->title == 0) {
+                  $answer->points += 10;
+                  $gameUser->score += 10;
+                  $answer->title = $title;
+              }
+          }
           $answer->time = $this->getTimeNow();
           $this->GameAnswers->save($answer);
+          $this->GamesUsers->save($gameUser);
       } else {
           $answer = $this->GameAnswers->find('all')->where(['sample_id' => $Sample->id, 'game_user_id' => $gameUser->id])->first();
 

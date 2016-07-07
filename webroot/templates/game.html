@@ -33,8 +33,8 @@
             <hr>
             <div style="text-align: center">
                 <div class="checkbox checkbox-inline">
-                    <label style="margin-right:50px"><input type="checkbox" value="" disabled>Artiste</label>
-                    <label><input type="checkbox" value="" disabled>Titre</label>
+                    <label style="margin-right:50px"><input type="checkbox" value="" ng-checked="artist" disabled>Artiste</label>
+                    <label><input type="checkbox" value="" ng-checked="title" disabled>Titre</label>
                 </div>
             </div>
             <br />
@@ -45,6 +45,7 @@
                     <div class="form-group">
                         <label for="artiste">Artiste & Titre</label>
                         <input ng-model="submitArtist" type="text" class="form-control input-large" id="artiste">
+                        <input type="submit" style="position: absolute; left: -9999px"/>
                     </div>
                     <button class="btn btn-primary" type="submit" >Envoyer</button>
                 </div>
@@ -53,7 +54,7 @@
             <br />
             <hr>
 
-            <div style="text-align: center">
+            <!--<div style="text-align: center">
                 <img SRC="https://cdn2.iconfinder.com/data/icons/color-svg-vector-icons-part-2/512/yes_check_ok_accept_tick_green-512.png" width="50" height="50">
                 <img SRC="https://cdn2.iconfinder.com/data/icons/color-svg-vector-icons-part-2/512/yes_check_ok_accept_tick_green-512.png" width="50" height="50" float="right"  >
                 <img SRC="https://cdn2.iconfinder.com/data/icons/color-svg-vector-icons-part-2/512/yes_check_ok_accept_tick_green-512.png" width="50" height="50" float="right"  >
@@ -65,7 +66,7 @@
                 <img SRC="https://cdn2.iconfinder.com/data/icons/color-svg-vector-icons-part-2/512/yes_check_ok_accept_tick_green-512.png" width="50" height="50" float="right"  >
                 <img SRC="https://cdn2.iconfinder.com/data/icons/color-svg-vector-icons-part-2/512/yes_check_ok_accept_tick_green-512.png" width="50" height="50" float="right"  >
                 <img SRC="https://cdn2.iconfinder.com/data/icons/color-svg-vector-icons-part-2/512/yes_check_ok_accept_tick_green-512.png" width="50" height="50" float="right"  >
-            </div>
+            </div>-->
         </div>
     </div>
 
@@ -73,12 +74,10 @@
         <h4>Classement</h4>
         <hr>
         <div class="list-group">
-            <p style="float: right;text-align: right">50pts</p>
-            <p> 1 - George</p>
-            <p style="float: right;text-align: right">35pts</p>
-            <p> 2 - MATT</p>
-            <p style="float: right;text-align: right">12pts</p>
-            <p> 3 - Lucy</p>
+                <div ng-repeat="rank in rankings | orderBy:'-score'">
+                    <p style="float: right;text-align: right">{{rank.score}}pts</p>
+                    <p> {{$index + 1}} - {{rank.user.login}}</p>
+                </div>
         </div>
     </div>
 </div>

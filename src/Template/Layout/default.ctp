@@ -84,35 +84,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           <ul class="nav navbar-nav">
             <li class="active"><a href="/#/">Home<span class="sr-only">(current)</span></a></li>
           </ul>
-          <?php
-            if (!$authUser)
-            {
-          ?>
-          <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
+          <ul class="nav navbar-nav navbar-right" style="margin-right: 10px" ng-if="!vm.isAuthenticated()">
             <li><p class="navbar-btn">
               <a href="#/login" class="btn btn-primary">Se connecter</a></p>
             </li>
           </ul>
-          <?php
-            }
-            else
-            {
-              ?>
-              <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
+              <ul class="nav navbar-nav navbar-right" style="margin-right: 10px" ng-if="vm.isAuthenticated()">
                 <li><p class="navbar-btn">
-                  <a href="/users/disconnect" class="btn btn-danger">Se déconnecter</a></p>
+                  <a ng-click="vm.logout()" class="btn btn-danger">Se déconnecter</a></p>
                 </li>
               </ul>
-              <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
-                <li><p class="navbar-btn">
-                  <a href="/account" class="btn btn-info">Mon compte</a></p>
-                </li>
-              </ul>
-              <img class="navbar-right" style="width: 40px; height : 40px; margin-right : 10px; margin-top : 5px" src="<?php echo $this->request->session()->read('image')?>">
-              <p class="navbar-right navbar-text" style="margin-right : 10px">Connecté en tant que <?php echo $this->request->session()->read('login') ?></p>
-              <?php
-            }
-          ?>
+              <p ng-if="vm.isAuthenticated()" class="navbar-right navbar-text" style="margin-right : 10px">Connecté en tant que {{vm.currentUser}}</p>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>

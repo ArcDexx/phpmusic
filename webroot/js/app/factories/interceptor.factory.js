@@ -55,12 +55,16 @@
 
             if ( response.status === 403 ) {
                 $timeout(function () {
+                    $cookies.remove('token');
+                    $cookies.remove('id');
                     $location.url('/login');
                 })
             }
 
             if ( response.status === 401 ) {
                 $timeout(function () {
+                    $cookies.remove('token');
+                    $cookies.remove('id');
                     $location.url('/login');
                 })
             }

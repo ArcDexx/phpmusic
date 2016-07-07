@@ -97,7 +97,6 @@ class AppController extends Controller
             if(!$this->checkUserToken())
             {
                 $this->Auth->logout();
-                throw new ForbiddenException("Invalid Token YO!");
             }
         }
         $this->set('authUser', $this->Auth->user());

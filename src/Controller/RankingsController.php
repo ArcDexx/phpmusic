@@ -36,8 +36,6 @@ class RankingsController extends AppController
         $this->loadModel('Users');
         $this->loadModel('GameAnswers');
         $users = $this->Users->find('all')->contain('Games');
-        $answers->find('all')->
-        debug($answers);
         $this->set(compact('users'));
         $this->set('_serialize', array('users'));
     }
@@ -52,7 +50,10 @@ class RankingsController extends AppController
      */
     public function view($id = null)
     {
-
+        $this->loadModel('GamesUsers');
+        $ranks = $this->GamesUsers->find()->where(['game_id' => $id])->contain('Users')->all();
+        $this->set(compact('ranks'));
+        $this->set('_serialize', array('ranks'));
     }
 
     /**

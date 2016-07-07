@@ -13,7 +13,8 @@
             getRankings: getRankings,
             getGameById: getGameById,
             trySubmit: trySubmit,
-            startNewGame: startNewGame
+            startNewGame: startNewGame,
+            getGameRankings: getGameRankings
         };
 
         function trySubmit(submitArtist, id) {
@@ -30,6 +31,10 @@
 
         function getRankings() {
             return $http.get('/rankings.json');
+        }
+
+        function getGameRankings(id) {
+            return $http.get('/rankings/' + id + ".json");
         }
 
         function getGameById(id) {

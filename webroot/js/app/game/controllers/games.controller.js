@@ -12,14 +12,23 @@
 
         vm.trySubmit = trySubmit;
 
-        var songDuration = 15;
+        var songDuration = 25;
         var pauseDuration = 5;
         var endPauseDuration = 30;
 
         activate();
 
         function trySubmit() {
-            Games.trySubmit($scope.submitArtist, $routeParams.id);
+            Games.trySubmit($scope.submitArtist, $routeParams.id).then(function(data) {
+                var answer = data.data.answer;
+                if (answer != undefined) {
+                    if (answer.title != undefined)
+                        $scope.title = answer.title;
+                    if (answer.artist != undefined)
+                        $scope.artist = answer.artist;
+                }
+            });
+            loadRankings();
         }
 
         function startNewGame() {
@@ -40,8 +49,8 @@
         }
 
         function loadRankings() {
-            Games.getRankings().then(function(result) {
-                $scope.rankings = result.data.rankings;
+            Games.getGameRankings($routeParams.id).then(function(result) {
+                $scope.rankings = result.data.ranks;
             }, function() {
                 //FIXME : Launch default modal error window with message
             })
@@ -50,6 +59,8 @@
         function loadCurrentSample() {
             var newSample = Math.floor(($scope.time - $scope.initTime) / (songDuration + pauseDuration));
             if (newSample != $scope.currentSample) {
+                $scope.artist = false;
+                $scope.title = false;
                 $scope.currentSample = newSample;
                 if ($scope.currentSample >= 0 && $scope.currentSample < $scope.totalNb) {
                     $scope.currentAudio = $scope.samples[$scope.currentSample].sample;

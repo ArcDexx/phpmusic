@@ -35,11 +35,11 @@
     }
 
     function getAuthenticatedAccount() {
-      if (!$cookies.get('account')) {
+      if (!$cookies.get('login')) {
         return;
       }
 
-      return JSON.parse($cookies.get('account'));
+      return $cookies.get('login');
     }
 
     function isAuthenticated() {
@@ -52,6 +52,7 @@
     function setAuthenticatedAccount(data) {
       $cookies.put('token', data.user.token);
       $cookies.put('id', data.user.id);
+      $cookies.put('login', data.user.login);
       $location.url('/games');
     }
 
@@ -59,13 +60,13 @@
     }
     
     function register(login, url, email, password) {
-      return $http.post('/users/register', {
+      return $http.post('/login/register.json', {
         login: login,
         url: url,
         email: email,
         password: password
       }).then(function (data) {
-        login(login, password)
+        Login.login(login, password)
       },function (data) {
       } );
       
@@ -79,7 +80,7 @@
     }
 
     function logout() {
-      return $http.post('/app/webroot/logout')
+      return $http.post('/login/logout.json')
           .then(logoutSuccessFn, logoutErrorFn);
       
       function logoutSuccessFn(data, status, headers, config) {

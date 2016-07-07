@@ -11,8 +11,19 @@
         var vm = this;
 
         vm.login = login;
+        vm.isAuthenticated = isAuthenticated;
+        vm.logout = logout;
 
         activate();
+
+        function logout() {
+            Login.logout();
+        }
+
+        function isAuthenticated() {
+            vm.currentUser = Login.getAuthenticatedAccount();
+            return Login.isAuthenticated();
+        }
 
         function activate() {
             if (Login.isAuthenticated()) {

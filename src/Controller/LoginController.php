@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\Network\Exception\NotAcceptableException;
 use Cake\Network\Exception\UnauthorizedException;
 use Cake\Utility\Security;
 
@@ -12,7 +13,7 @@ class LoginController extends AppController
   public function beforeFilter(Event $event)
   {
     parent::beforeFilter($event);
-    $this->Auth->allow(['index', 'logout']);
+    $this->Auth->allow(['index', 'register', 'logout']);
   }
 
   public function index()
@@ -51,6 +52,23 @@ class LoginController extends AppController
 
     $this->set('user', $this->Auth->user());
     $this->set('_serialize', ['user']);
+  }
+
+  public function register() {
+    $this->loadModel('Users');
+    $user = $this->Users->newEntity();
+    $user->email = $this->request->data['email'];
+    $user->image = $this->request->data['url'];
+    $user->password = $this->request->data['password'];
+    $user->login = $this->request->data['login'];
+    $user->is_guest = 0;
+    if($this->Users->save($user)) {
+
+      $this->set('user', $user);
+      $this->set('_serialize', ['user']);
+    } else {
+      throw new NotAcceptableException("Nope", 406);
+    }
   }
   /**
    * Logout user
