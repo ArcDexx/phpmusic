@@ -167,7 +167,7 @@ class GamesController extends AppController
 
     private function getCurrentSample($game) {
       $date = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
-      $id = floor(($date->getTimestamp() - $game->start_time->getTimestamp()) / (count($games->samples)*(15 + 5)));
+      $id = floor(($date->getTimestamp() - $game->start_time->getTimestamp()) / ((15 + 5)));
       if ($id <= count($game->samples))
       {
         return $game->samples[$id];
@@ -176,28 +176,46 @@ class GamesController extends AppController
       }
   }
 
+public function submit()
+{
+  $text = $this->request->data['submitArtist'];
+  $userId = 1;
+  $gameId = $this->request->data['gameId'];
+
+  $this->findArtistTitle($text, $userId, $gameId);
+}
+
   public function findArtistTitle($text, $userId, $gameId)
   {
     $this->loadModel('Samples');
     $this->loadModel('Games');
+    $this->loadModel('GamesUsers');
     $this->loadModel('GamesSamples');
-    $this->loadModel('GamesAnswers');
-    $game = $this->Games->find('all')->where(['id' => $gameId])->contain(['Samples'])->first();
+    $this->loadModel('GameAnswers');
+    $game = $this->Games->find('all')->contain(['Samples'])->where(['id' => $gameId])->first();
 
-    debug(getCurrentSample($game));
+    $gameUser = $this->GamesUsers->find('all')->where(['game_id' => $gameId, 'user_id' => $userId]);
+    $Sample = $this->getCurrentSample($game);
 
-    $Sample = getCurrentSample($game);
+    $answer = $this->GameAnswers->find('all')->where(['sample_id' => $Sample->id, 'game_user_id' => $gameUser->id])->first();
 
-    $Game_answers = $this->GamesAnswers->find('all')->where(['id_sample' => $idSample, 'userId' => $userId]);
+    if ($answer == null) {
+      $answer = $this->GameAnswers->newEntity();
+    }
 
-	/*
-    if (correspond($text, sample.artist))
-      $Game_answers->update(artist = true);
+    if ($this->checkinput($text, $Sample->artist) > 80)
+    {
+      $answer->artist = true;
+    }
 
-    if (correspond($text, sample.title))
-      $Game_answers->update(title = true);*/
+    if ($this->checkinput($text, $Sample->title) > 80)
+    {
+      $answer->title = true;
+    }
+
+    $this->set(compact('answer'));
+    $this->set('_serialize', ['answer']);
   }
-
 
     public function checkinput($input, $expected)
     {

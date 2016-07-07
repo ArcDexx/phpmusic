@@ -10,16 +10,16 @@
     function GamesController($location, $scope, $routeParams, Utils, Games, Audio) {
         var vm = this;
 
+        vm.trySubmit = trySubmit;
+
         var songDuration = 15;
         var pauseDuration = 5;
         var endPauseDuration = 30;
 
         activate();
 
-        vm.trySubmit = trySubmit;
-
         function trySubmit() {
-            Games.submitArtist($scope.submitArtist);
+            Games.trySubmit($scope.submitArtist, $routeParams.id);
         }
 
         function startNewGame() {

@@ -81,6 +81,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->resources('Users');
     $routes->resources('Rankings');
     $routes->resources('Samples');
+    $routes->resources('GameAnswers');
 });
 
 

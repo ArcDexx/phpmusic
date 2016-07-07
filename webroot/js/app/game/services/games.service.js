@@ -16,10 +16,10 @@
             startNewGame: startNewGame
         };
 
-        function trySubmit(submitArtist) {
-            return $http.post('/submit/', {artist: submitArtist})
+        function trySubmit(submitArtist, id) {
+            return $http.post('/games/submit.json', {submitArtist: submitArtist, gameId: id})
         }
-        
+
         function startNewGame(game) {
             return $http.post('/games/add.json', {game: game});
         }
