@@ -164,4 +164,44 @@ class GamesController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
+    private function getCurrentSample($game) {
+      $date = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
+      $id = floor(($date->getTimestamp() - $game->start_time->getTimestamp()) / (count($games->samples)*(15 + 5)));
+      if ($id <= count($game->samples))
+      {
+        return $game->samples[$id];
+      } else {
+        return -1;
+      }
+  }
+
+  public function findArtistTitle($text, $userId, $gameId)
+  {
+    $this->loadModel('Samples');
+    $this->loadModel('Games');
+    $this->loadModel('GamesSamples');
+    $this->loadModel('GamesAnswers');
+    $game = $this->Games->find('all')->where(['id' => $gameId])->contain(['Samples'])->first();
+
+    debug(getCurrentSample($game));
+
+    $Sample = getCurrentSample($game);
+
+    $Game_answers = $this->GamesAnswers->find('all')->where(['id_sample' => $idSample, 'userId' => $userId]);
+
+  /*  if (correspond($text, sample.artist))
+      $Game_answers->update(artist = true);
+
+    if (correspond($text, sample.title))
+      $Game_answers->update(title = true);*/
+  }
+
+  private function correspond($text, $idSample)
+  {
+    $words = explode(' ', $string);
+
+
+      return true;
+  }
 }
