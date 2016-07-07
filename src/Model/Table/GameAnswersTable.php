@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * GameAnswers Model
  *
- * @property \Cake\ORM\Association\BelongsTo $GameUsers
+ * @property \Cake\ORM\Association\BelongsTo $GamesUsers
  * @property \Cake\ORM\Association\BelongsTo $Samples
  *
  * @method \App\Model\Entity\GameAnswer get($primaryKey, $options = [])
@@ -37,7 +37,7 @@ class GameAnswersTable extends Table
         $this->displayField('title');
         $this->primaryKey('id');
 
-        $this->belongsTo('GameUsers', [
+        $this->belongsTo('GamesUsers', [
             'foreignKey' => 'game_user_id',
             'joinType' => 'INNER'
         ]);
@@ -74,6 +74,11 @@ class GameAnswersTable extends Table
             ->requirePresence('time', 'create')
             ->notEmpty('time');
 
+        $validator
+            ->integer('points')
+            ->requirePresence('points', 'create')
+            ->notEmpty('points');
+
         return $validator;
     }
 
@@ -86,7 +91,7 @@ class GameAnswersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['game_user_id'], 'GameUsers'));
+        $rules->add($rules->existsIn(['game_user_id'], 'GamesUsers'));
         $rules->add($rules->existsIn(['sample_id'], 'Samples'));
         return $rules;
     }

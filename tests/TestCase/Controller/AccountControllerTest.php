@@ -27,7 +27,7 @@ class AccountControllerTest extends IntegrationTestCase
 
     public function testIndex()
     {
-      $this->get('/');
+      $this->get('/account');
 
       $this->assertResponseOk();
     }

@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property bool $artist
  * @property bool $title
  * @property \Cake\I18n\Time $time
+ * @property int $points
  *
  * @property \App\Model\Entity\GameUser $game_user
  * @property \App\Model\Entity\Sample $sample
