@@ -69,6 +69,20 @@ class UsersController extends AppController
           $this->redirect(array('controller' => 'signup', 'action' => 'index', 'fail' => '1'));
     }
 
+    public function register()
+    {
+        $user = $this->Users->newEntity();
+        $user->email = $this->request->data['email'];
+        $user->image = $this->request->data['url'];
+        $user->password = $this->request->data['password'];
+        $user->login = $this->request->data['login'];
+        $user->is_guest = 0;
+        if ($this->Users->save($user))
+            $this->redirect(array('controller' => 'home', 'action' => 'index'));
+        else
+            $this->redirect(array('controller' => 'signup', 'action' => 'index', 'fail' => '1'));
+    }
+
     public function disconnect()
     {
       $this->request->session()->delete('isLogged');
