@@ -1,0 +1,25 @@
+==========
+Test cases
+==========
+
+Les cas testés sont les suivants :
+
+  - Affichage OK de toutes les views
+  - Insertions en BDD respectant les contraintes d'unicité
+  - Test de correspondance des input dans une partie
+
+Pour dérouler ces tests :
+
+Dans un shell à la racine du projet, lancer la commande 'vendor/bin/phpunit'.
+
+=============
+Configuration
+=============
+
+Veiller à ce que PHPUnit soit installé (=> composer install)
+
+Dans config/app.php :
+
+Updater la partie 'DataSources' :
+
+Les DEUX sous-tableaux 'default' et 'test' doivent contenir les bonnes informations relatives à la BDD.
