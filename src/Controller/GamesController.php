@@ -190,18 +190,20 @@ class GamesController extends AppController
 
     $Game_answers = $this->GamesAnswers->find('all')->where(['id_sample' => $idSample, 'userId' => $userId]);
 
-  /*  if (correspond($text, sample.artist))
+	/*
+    if (correspond($text, sample.artist))
       $Game_answers->update(artist = true);
 
     if (correspond($text, sample.title))
       $Game_answers->update(title = true);*/
   }
 
-  private function correspond($text, $idSample)
-  {
-    $words = explode(' ', $string);
 
+    public function checkinput($input, $expected)
+    {
+      $percent;
+      similar_text($input, $expected, $percent);
 
-      return true;
-  }
+      return $percent;
+    }
 }
